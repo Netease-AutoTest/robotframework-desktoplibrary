@@ -1,0 +1,22 @@
+language: python
+python:
+- '2.7'
+- '3.3'
+script:
+- echo from desktop lib
+- pypy
+deploy:
+  - provider: pypi
+    user: longma
+    password:
+      secure: t1yk8+Pp+DTsLMvqWgdZjpEFa9XtO2LbMg77QXbOf9j0G6cmmEBUrkWWJshLXMZsVoIDH0atvL+4Nlgc94nGyAlF7N4VKprYYm8+DjfTepYXDYD44Q70H5tArnaqNhvVLoMyS6yn5tH6rAkaQlq+gAggGj2Y02nU5H+oIzjsfdlYxcxq1Kw3Rm38ybFAcCaXviYKWpR2A+e9Cyt5rsEpGskUmEiwDTPGWnzmaqp5N1VVgWm4qoUDBqgvo9i8nsXFi6P1iQ2hUy9wQGqtKJ6QLT447VUf9efvDqN6Ny7wQaha5rfbEMdszGjjqvEc1Dry2PwhIrQgfIgiC5UTfX8hJlqyjo8EllMI3xzzZrji+JvYR9oz8WGxaYrVUCbcEevTXisX+4olIkOWG+QoikC+7J8RGwrbbneik1NhT+6kz8mx3jxMgaKo4buUZmMI3VEwsOQoeemfee/jbKgQJ9HJQLGLHetFRx2B5CpKRfMTmcDpyd6OHILcTNtsTfr309spOAb7Y5JySki4m+dmNXSp3B9wcpsiqCNH6/rbVPqWazmCL6+GFDnkJ1fRJ4Yy8zOsEYjSVEGONF4hsfbo2XPl6FtiX9LIrrjcI8pypJvGxBFxSvAQrVdpQcaoLPXJx3Eo3R8Ofr2OdatKWns4e34Ob199j8g2fcOUqTfUQ2YHTBQ=
+    on:
+      tags: true
+    distributions: sdist bdist_wheel
+  - provider: pypi
+    user: longma
+    password:
+      secure: t1yk8+Pp+DTsLMvqWgdZjpEFa9XtO2LbMg77QXbOf9j0G6cmmEBUrkWWJshLXMZsVoIDH0atvL+4Nlgc94nGyAlF7N4VKprYYm8+DjfTepYXDYD44Q70H5tArnaqNhvVLoMyS6yn5tH6rAkaQlq+gAggGj2Y02nU5H+oIzjsfdlYxcxq1Kw3Rm38ybFAcCaXviYKWpR2A+e9Cyt5rsEpGskUmEiwDTPGWnzmaqp5N1VVgWm4qoUDBqgvo9i8nsXFi6P1iQ2hUy9wQGqtKJ6QLT447VUf9efvDqN6Ny7wQaha5rfbEMdszGjjqvEc1Dry2PwhIrQgfIgiC5UTfX8hJlqyjo8EllMI3xzzZrji+JvYR9oz8WGxaYrVUCbcEevTXisX+4olIkOWG+QoikC+7J8RGwrbbneik1NhT+6kz8mx3jxMgaKo4buUZmMI3VEwsOQoeemfee/jbKgQJ9HJQLGLHetFRx2B5CpKRfMTmcDpyd6OHILcTNtsTfr309spOAb7Y5JySki4m+dmNXSp3B9wcpsiqCNH6/rbVPqWazmCL6+GFDnkJ1fRJ4Yy8zOsEYjSVEGONF4hsfbo2XPl6FtiX9LIrrjcI8pypJvGxBFxSvAQrVdpQcaoLPXJx3Eo3R8Ofr2OdatKWns4e34Ob199j8g2fcOUqTfUQ2YHTBQ=
+    distributions: sdist bdist_wheel
+after_deploy:
+- echo done
